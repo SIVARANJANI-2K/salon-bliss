@@ -1,0 +1,98 @@
+.booking-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.booking-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--brown);
+  background: transparent;
+  color: var(--brown);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: var(--light-brown);
+  color: var(--cream);
+}
+
+.filter-btn.active {
+  background: var(--brown);
+  color: var(--cream);
+}
+
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.booking-info {
+  padding-left: 1rem;
+}
+
+.booking-info h3 {
+  margin: 0 0 1rem 0;
+  color: var(--brown);
+}
+
+.booking-date,
+.booking-time {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.booking-status {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.no-bookings {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

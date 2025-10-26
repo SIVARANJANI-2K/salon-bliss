@@ -1,0 +1,97 @@
+:root {
+  --cream: #f7f3e9;
+  --brown: #5c4033;
+  --light-brown: #b08968;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cream);
+  color: var(--brown);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--brown);
+  color: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+.nav-links a:hover {
+  color: var(--light-brown);
+  transition: 0.3s ease;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgba(92, 64, 51, 0.7), rgba(92, 64, 51, 0.3)), url("./assets/salon-hero.jpg") center/cover no-repeat;
+  color: var(--cream);
+  text-align: center;
+}
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.button {
+  background-color: var(--brown);
+  color: var(--cream);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--light-brown);
+}
+.footer {
+  background-color: var(--brown);
+  color: var(--cream);
+  text-align: center;
+  padding: 1rem 2rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-grid img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-grid .large {
+  grid-row: span 2;
+}

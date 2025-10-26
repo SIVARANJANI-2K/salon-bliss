@@ -1,0 +1,122 @@
+/* Brown & cream theme for Booking page */
+.booking {
+  padding: 2rem;
+  background: #fbf6ef; /* cream */
+  color: #4b2e2a; /* dark brown */
+  min-height: 80vh;
+  box-sizing: border-box;
+}
+
+.booking h2 {
+  color: #5c3a34;
+  margin-bottom: 1rem;
+}
+
+.booking-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.calendar-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(75,46,42,0.08);
+  flex: 1;
+}
+
+.image-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-card img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(75,46,42,0.06);
+}
+
+.slots {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.slot-button {
+  background: #fff;
+  color: #4b2e2a;
+  border: 1px solid rgba(75,46,42,0.12);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 2px 6px rgba(75,46,42,0.04);
+}
+
+.slot-button:hover {
+  transform: translateY(-3px);
+}
+
+.slot-button.selected {
+  background: #5c3a34; /* brown */
+  color: #fff;
+  border-color: #5c3a34;
+  box-shadow: 0 8px 20px rgba(92,58,52,0.18);
+}
+
+.confirm-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.confirm-button {
+  background: #5c3a34;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(92,58,52,0.18);
+}
+
+.cancel-button {
+  background: transparent;
+  color: #5c3a34;
+  border: 1px solid rgba(92,58,52,0.14);
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.availability-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b4a45;
+}
+
+/* React Calendar overrides for a cleaner look */
+.react-calendar {
+  border: none;
+  background: transparent;
+}
+.react-calendar__tile {
+  border-radius: 6px;
+}
+.react-calendar__tile--now {
+  background: rgba(92,58,52,0.06);
+  color: #5c3a34;
+}
+.react-calendar__navigation button {
+  color: #5c3a34;
+}
+.react-calendar__tile--active {
+  background: #5c3a34;
+  color: #fff;
+}
