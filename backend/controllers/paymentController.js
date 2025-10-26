@@ -1,6 +1,6 @@
 import Stripe from 'stripe';
 import Booking from '../models/Booking.js';
-import { sendBookingConfirmationEmail } from '../utils/email.js';
+import { sendBookingConfirmationEmail,scheduleBookingReminder } from '../utils/email.js';
 import dotenv from 'dotenv';
 
 // Ensure environment variables are loaded

@@ -44,11 +44,8 @@ export default function Services() {
       <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
         {services.map((service) => {
           // Backend model uses `image` and `description` fields
-          const imagePath = service.image ? (
-            service.image.startsWith('http')
-              ? service.image
-              : `/images/${service.image.replace(/^images\//, '').replace(/^\//, '')}`
-          ) : '/placeholder.png';
+          console.log(service.image);
+          const imagePath = service.image;
 
           return (
             <motion.div
