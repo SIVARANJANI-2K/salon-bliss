@@ -61,9 +61,10 @@ jobs:
         with:
           app-name: 'salon-bliss-backend'
           slot-name: 'Production'
-          package: './node-app'
+          package: .
 
           
+
 
 
 
