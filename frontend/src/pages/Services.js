@@ -17,7 +17,7 @@ export default function Services() {
         const data = await servicesAPI.getAll();
         setServices(data);
       } catch (err) {
-        setError("Could not load services. Please try again later.");
+        setError("Could not load services. Please try again later."+err.message);
       } finally {
         setLoading(false);
       }
