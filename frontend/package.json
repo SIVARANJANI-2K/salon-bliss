@@ -2,6 +2,10 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "dependencies": {
     "@stripe/react-stripe-js": "^5.2.0",
     "@stripe/stripe-js": "^8.1.0",
@@ -12,10 +16,10 @@
     "axios": "^1.12.2",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.24",
-    "react": "^19.2.0",
+    "react": "^18.2.0",
     "react-calendar": "^6.0.0",
-    "react-dom": "^19.2.0",
-    "react-router-dom": "^7.9.4",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0",
     "react-scripts": "5.0.1",
     "swiper": "^12.0.3",
     "web-vitals": "^2.1.4"
