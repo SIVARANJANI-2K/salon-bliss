@@ -22,7 +22,11 @@ connectDB();
 const app = express();
 
 // Configure CORS
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://orange-pond-073f1ad00.3.azurestaticapps.net',
+}));
+
 
 // Special handling for Stripe webhook route
 // Accept both singular and plural paths so webhooks configured either way will work
