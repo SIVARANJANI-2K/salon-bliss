@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+          path: ./
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -61,9 +61,10 @@ jobs:
         with:
           app-name: 'salon-bliss-backend'
           slot-name: 'Production'
-          package: node-app
+          package: ./node-app
 
           
+
 
 
 
