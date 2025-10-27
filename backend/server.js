@@ -22,10 +22,29 @@ connectDB();
 const app = express();
 
 // Configure CORS
+    const allowedOrigins = [
+      'http://localhost:3000', // Example frontend origin
+      'https://orange-pond-073f1ad00.3.azurestaticapps.net', // Example production domain
+ // Another allowed domain
+    ];
 
-app.use(cors({
-  origin: 'https://orange-pond-073f1ad00.3.azurestaticapps.net',
-}));
+    // Configure CORS options with a dynamic origin function
+    const corsOptions = {
+      origin: (origin, callback) => {
+        // Check if the incoming origin is in the allowedOrigins list
+        // Or if the origin is undefined (e.g., for direct requests or Postman)
+        if (allowedOrigins.includes(origin) || !origin) {
+          callback(null, true); // Allow the request
+        } else {
+          callback(new Error('Not allowed by CORS')); // Deny the request
+        }
+      },
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
+      allowedHeaders: 'Content-Type,Authorization', // Allowed request headers
+      credentials: true, // Allow sending cookies and HTTP authentication credentials
+      optionsSuccessStatus: 200 // Set the status code for successful OPTIONS requests
+    };
+app.use(cors(corsOptions));
 
 
 // Special handling for Stripe webhook route
