@@ -46,7 +46,13 @@ const app = express();
     };
 app.use(cors(corsOptions));
 
+app.options(/.*/, cors(corsOptions));
 
+// Optional debug log to confirm origins hitting the server
+app.use((req, res, next) => {
+  console.log('Incoming origin:', req.headers.origin);
+  next();
+});
 // Special handling for Stripe webhook route
 // Accept both singular and plural paths so webhooks configured either way will work
 app.use('/api/payment/webhook', express.raw({ type: 'application/json' }));
