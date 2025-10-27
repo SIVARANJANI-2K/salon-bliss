@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22.x'
-
       - name: npm install and build
         run: |
           npm install
@@ -54,7 +53,6 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9FB1B830F5884DC48D18E4E52D8BCA1E }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8BB4D73DE56745D89508240BB35BB4F1 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_82AB6B58F4894033B6B1F08E8FFD22D0 }}
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
@@ -64,6 +62,10 @@ jobs:
           package: .
 
           
+
+
+
+
 
 
 
