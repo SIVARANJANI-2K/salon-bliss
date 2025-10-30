@@ -135,7 +135,7 @@ export const confirmPayment = async (req, res) => {
     const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
 
     if (paymentIntent.status === 'succeeded') {
-      const booking = await Booking.findById(paymentIntent.metadata.bookingId);
+      const booking = await Booking.findById(paymentIntent.metadata.bookingId).populate('service').populate('user');
       if (!booking) {
         return res.status(404).json({ error: 'Booking not found' });
       }
@@ -143,7 +143,8 @@ export const confirmPayment = async (req, res) => {
       booking.status = 'confirmed';
       booking.paymentStatus = 'paid';
       await booking.save();
-
+      console.log("Mailing booking :"+booking);
+      console.log("Booking name :"+booking.service.name);
       // Send confirmation email
       await sendBookingConfirmationEmail(booking);
 
